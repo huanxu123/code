@@ -1,0 +1,264 @@
+/* 全局样式 */
+
+:root {
+  /* 主题色 */
+  --primary-color: #667eea;
+  --primary-light: #7c8ff2;
+  --primary-dark: #5469d4;
+  --secondary-color: #764ba2;
+  
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-success: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  --gradient-warning: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-info: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  
+  /* 背景色 */
+  --bg-color: #f5f7fa;
+  --bg-dark: #1a1a2e;
+  --card-bg: #ffffff;
+  
+  /* 文字颜色 */
+  --text-primary: #2c3e50;
+  --text-secondary: #606266;
+  --text-muted: #909399;
+  
+  /* 边框 */
+  --border-color: #e4e7ed;
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
+  
+  /* 阴影 */
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+  
+  /* 过渡 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 卡片样式 */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* 渐变按钮 */
+.btn-gradient {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+/* 统计卡片 */
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card .icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+.stat-card .icon.primary {
+  background: var(--gradient-primary);
+}
+
+.stat-card .icon.success {
+  background: var(--gradient-success);
+}
+
+.stat-card .icon.warning {
+  background: var(--gradient-warning);
+}
+
+.stat-card .icon.info {
+  background: var(--gradient-info);
+}
+
+.stat-card .info h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-card .info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Element Plus 覆盖样式 */
+.el-button--primary {
+  background: var(--gradient-primary) !important;
+  border: none !important;
+}
+
+.el-button--primary:hover {
+  opacity: 0.9;
+}
+
+.el-menu {
+  border-right: none !important;
+}
+
+.el-card {
+  border-radius: var(--border-radius) !important;
+  border: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.el-table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.el-table th.el-table__cell {
+  background-color: #fafafa !important;
+}
+
+.el-dialog {
+  border-radius: var(--border-radius-lg) !important;
+}
+
+.el-input__wrapper {
+  border-radius: 8px !important;
+}
+
+.el-tag {
+  border-radius: 6px !important;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+  }
+  
+  .stat-card .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  
+  .stat-card .info h3 {
+    font-size: 22px;
+  }
+}
