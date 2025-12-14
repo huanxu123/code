@@ -74,3 +74,6 @@ Thumbs.db
 *.bak
 *.tmp
 *~
+
+# Project specific
+requirement.md
